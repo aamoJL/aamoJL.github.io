@@ -1,0 +1,339 @@
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<!--    <link href="style.css" type="text/css" rel=stylesheet>-->
+    
+    <script>
+        var tag = document.createElement('script');
+        
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+        var player;
+        
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+            videoId: 'M7lc1UVf-VE',
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+                },
+            playerVars: {
+                autoplay: 1,    //autoplay
+                controls: 1,    //buttons
+                disablekb: 1,   //keyboard controls
+                fs: 0,          //fullscreen
+                iv_load_policy: 3,  //annotations
+                rel: 0          //related videos
+            }
+            });
+            
+            setVolume();
+            
+        }
+        
+        function setVolume(){
+            var volume = player.getVolume();
+            document.getElementById("volume").value = volume;
+        }
+        
+        function onPlayerReady(event) {
+//            event.target.playVideo();
+            setVolume();
+        }
+        
+        var done = false;
+        function onPlayerStateChange(event) {
+//            if (event.data == YT.PlayerState.PLAYING && !done) {
+//                
+//            }
+        }
+        
+        function muteVideo() {
+            if(player.isMuted()){
+                player.unMute();
+            }
+            else { player.mute();}
+        }
+        
+        function playVideo() {
+            var state = player.getPlayerState();
+            if(state != 1){
+                player.playVideo();
+            }
+            else {player.pauseVideo();}
+        }
+        
+        function changeVideo() {
+            var id = document.getElementById("change").value;
+            player.loadVideoById(
+                id)
+        }
+        
+        function changeVolume() {
+            var volume = document.getElementById("volume").value;
+            
+            player.setVolume(volume);
+        }
+        
+        //css
+        //iframe:
+        //pointer-events: none;
+    </script>
+<style>
+    
+    body {
+        margin: 0px;
+        font-family: 'Roboto', sans-serif;
+    }
+    header {
+        background-color: #ff9ec6;
+        height: 120px;
+        padding: 0px;
+        margin: 0px;
+    }
+    a {
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 25;
+        color: black;
+        text-decoration: none;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 3px;
+        border-top: 3px solid transparent;
+    }
+    a:hover {
+        border-color: black;
+    }
+    nav {
+        background-color: grey;
+        height: auto;
+        padding-left: 120px;
+        box-shadow: 0px 3px 10px -2px #808080;
+    }
+    main {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;
+        
+/*        border: 1px solid;*/
+    }
+    
+    /* Vasen puoli */
+    section {
+        width: 50%;
+        height: auto;
+        float:left;
+        position: relative;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    article {
+        background-color: white;
+        width: auto;
+        height: 100px;
+        box-shadow: 0px 3px 10px -2px #808080;
+        position: relative;
+        padding: 10px;
+    }
+    #playerButtons {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #FF9DC6;
+        position: relative;
+        padding: 0;
+    }
+    button.playerButton {
+        color: #FF9DC6;
+        background-color: #FFFFFF;
+        border: 0;
+        height: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+/*    Sliderin stylet eri selaimille --------------------*/
+    
+    input[type=range] {
+        -webkit-appearance: none;
+        max-width: 500px;
+        margin-left: 10px;
+        margin-right: 10px;
+        position: absolute;
+        top: 40%;
+        right: 0;
+    }
+    input[type=range]:focus {
+        outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        box-shadow: 0px 0px 2px #000000, 0px 0px 0px #0d0d0d;
+        background: #ffffff;
+        border-radius: 25px;
+        border: 0px solid #000101;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        box-shadow: 0px 0px 2.9px #000000, 0px 0px 0px #0d0d0d;
+        border: 4px solid #ff9dc6;
+        height: 20px;
+        width: 20px;
+        border-radius: 50px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -7.5px;
+    }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #ffffff;
+    }
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        box-shadow: 0px 0px 2px #000000, 0px 0px 0px #0d0d0d;
+        background: #ffffff;
+        border-radius: 25px;
+        border: 0px solid #000101;
+    }
+    input[type=range]::-moz-range-thumb {
+        box-shadow: 0px 0px 2.9px #000000, 0px 0px 0px #0d0d0d;
+        border: 4px solid #ff9dc6;
+        height: 20px;
+        width: 20px;
+        border-radius: 50px;
+        background: #ffffff;
+        cursor: pointer;
+    }
+    input[type=range]::-ms-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+    input[type=range]::-ms-fill-lower {
+        background: #f2f2f2;
+        border: 0px solid #000101;
+        border-radius: 50px;
+        box-shadow: 0px 0px 2px #000000, 0px 0px 0px #0d0d0d;
+    }
+    input[type=range]::-ms-fill-upper {
+        background: #ffffff;
+        border: 0px solid #000101;
+        border-radius: 50px;
+        box-shadow: 0px 0px 2px #000000, 0px 0px 0px #0d0d0d;
+    }
+    input[type=range]::-ms-thumb {
+        box-shadow: 0px 0px 2.9px #000000, 0px 0px 0px #0d0d0d;
+        border: 4px solid #ff9dc6;
+        height: 20px;
+        width: 20px;
+        border-radius: 50px;
+        background: #ffffff;
+        cursor: pointer;
+        height: 5px;
+    }
+    input[type=range]:focus::-ms-fill-lower {
+        background: #ffffff;
+    }
+    input[type=range]:focus::-ms-fill-upper {
+        background: #ffffff;
+    }
+    #playlistButton{
+        position: absolute;
+        float: left;
+        margin-top: 25;
+    }
+/*    player wrapper*/
+    .wrapper {
+        padding-bottom: 56.25%;
+        position: relative;
+        padding-top: 25px;
+        height: 0;
+    }
+    iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+/*        pointer-events: none;*/
+    }
+    td {
+        width: 100%;
+        height: 70px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: black;
+        white-space: nowrap;
+    }
+    tr td:first-child {
+        max-width: 1px;
+        overflow: hidden;
+    }
+    table {
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+    tr:hover {
+        background-color: lightgrey;
+    }
+    footer {
+        background-color: grey;
+        color: lightgrey;
+        position: fixed;
+        bottom: 0;
+        height: 49px;
+        width: 100%;
+        box-shadow: inset 0px 7px 10px -7px black;
+    }
+    ul {
+        float: left;
+    }
+    li {
+        display: inline-block;
+        list-style: none;
+        padding-right: 10px;
+        padding-left: 10px;
+        border-right: 1px solid lightgray;
+    }
+    ul > li {
+        vertical-align: middle;
+    }
+</style>
+
+</head>
+<body>
+    <header>
+    </header>
+    <nav>
+        <a href="index.html">Pleblist</a><a href="songlist.html">Song list</a><a href="login.html">Login</a><a href="blog.html">Devblog</a>
+    </nav>
+    <main>
+        <section>
+            <div class="wrapper">
+                <div id="player"></div>
+            </div>
+            <article id=playerButtons>
+                <button class="playerButton" id="play" onclick="playVideo()">Play</button><button class="playerButton" id="mute" onclick="muteVideo()">Mute</button><input id="volume" type=range min="0" max="100" value=100 onchange="changeVolume()">
+            </article>
+            <article>
+                <h1>Vaihda kappale</h1>
+                <input id="change" type="text" name="song" placeholder="Syötä ID"><button onclick="changeVideo()">>></button>
+                <p>zbgBKQcBV6A<br>M7lc1UVf-VE</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <ul><li>Server time: 00:00:00</li><li>asdasdasdasdasd</li></ul>
+    </footer>
+</body>
