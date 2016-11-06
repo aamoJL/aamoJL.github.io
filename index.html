@@ -2,7 +2,25 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <!--    <link href="style.css" type="text/css" rel=stylesheet>-->
+    
+    <script>
+        function closeList() {
+            document.getElementById("playlist").style.width = "0px";
+            document.getElementById("playlist").style.overflow = "hidden";
+            document.getElementById("playlistButton").innerHTML = "Open";
+            document.getElementById("playlistButton").onclick = openList;
+        }
+                
+        function openList() {
+            document.getElementById("playlist").style.width = "auto";
+            document.getElementById("playlist").style.overflow = "auto";
+            document.getElementById("playlistButton").onclick = closeList;
+            document.getElementById("playlistButton").innerHTML = "Close";
+        }
+        
+    </script>
 <style>
+    
     body {
         margin: 0px;
         font-family: 'Roboto', sans-serif;
@@ -13,9 +31,6 @@
             left bottom;
         background-size: 800px 800px, auto;
         background-attachment: fixed;
-/*        gradient*/
-        
-        
     }
     header {
         background-color: #ff9ec6;
@@ -52,6 +67,8 @@
         
 /*        border: 1px solid;*/
     }
+    
+    /* Vasen puoli */
     section {
         width: 50%;
         height: auto;
@@ -96,7 +113,6 @@
         top: 40%;
         right: 0;
     }
-    
     input[type=range]:focus {
         outline: none;
     }
@@ -177,31 +193,32 @@
     input[type=range]:focus::-ms-fill-upper {
         background: #ffffff;
     }
-
     
 /*    --------------------------------------*/
     
+    /* Oikea puoli */
     aside {
         background-color: rgba(255, 255, 255, 0.8);
-        
         position: static;
-        
-        max-width: 100%;
+/*        width: 0px;*/
+        max-width: 40%;
         max-height: 700px;
-        min-width: 20px;
-        
 /*        margin-left: 580px;*/
         margin-bottom: 10px;
-        margin-right: 50px;
-        
+/*        margin-right: 50px;*/
         border-left: 2px solid #FF9DC6;
         border-right: 14px solid #FF9DC6;
         box-shadow: 0px 3px 10px -2px #808080;
         border-radius: 0px 10px 10px 0px;
-        
         overflow: auto;
-        float: none;
+        float: left;
     }
+    #playlistButton{
+        position: absolute;
+        float: left;
+        margin-top: 25;
+    }
+/*    player wrapper*/
     .wrapper {
         padding-bottom: 56.25%;
         position: relative;
@@ -258,16 +275,21 @@
     }
     
     
-/*    nämä, jos pieni ikkuna*/
-    @media screen and (max-width: 600px ) {
+/*    nämä, jos kapea ikkuna*/
+    @media screen and (max-width: 610px ) {
         aside {
             position: static;
+            overflow: auto;
             float: left;
-            width: 100%;
-            border-right: 2px solid #FF9DC6;
+            max-width: 100%;
+            width: auto;
+            border-top: 2px solid #FF9DC6;
+            border-right: 0;
+            border-left: 0;
+            border-bottom: 14px solid #FF9DC6;
             border-radius: 0px;
-            color: aqua;
             margin-bottom: 100px;
+            border-radius: 0px 0px 10px 10px;
         }
         ul {
             float: none;
@@ -276,21 +298,26 @@
         section {
             width: 100%;
         }
+        #playlistButton {
+            position: static;
+/*            display: none;*/
+        }
     }
+/*    nämä, jos lyhyt ikkuna*/
     @media screen and (max-height: 935px ){
         aside {
             height: 560px;
         }
     }
 </style>
-</head>
 
+</head>
 <body>
     <header>
         <img src="kotori.png" alt="Logo" style="width: 120px; transform: scale(-1,-1);">
     </header>
     <nav>
-        <a href="">Pleblist</a><a href="">Song list</a><a href="">Login</a><a href="">Devblog</a>
+        <a href="index.html">Pleblist</a><a href="songlist.html">Song list</a><a href="login.html">Login</a><a href="blog.html">Devblog</a>
     </nav>
     <main>
         <section>
@@ -305,7 +332,8 @@
                 <input type="text" name="song" placeholder="Syötä linkki..."><button>>></button>
             </article>
         </section>
-        <aside>
+        <aside id="playlist">
+            
             <table>
                 <tr><td>aside</td><td>123</td></tr>
                 <tr><td>asdasd</td><td>123</td></tr>
@@ -337,6 +365,7 @@
                 <tr><td>Draft - Forfeits</td><td>123</td></tr>
             </table>
         </aside>
+        <button id="playlistButton" onclick="closeList()">Close</button>
     </main>
     <footer>
         <ul><li>Server time: 00:00:00</li><li>asdasdasdasdasd</li></ul>
