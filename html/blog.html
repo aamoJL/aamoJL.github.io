@@ -1,0 +1,36 @@
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="styles/style.css" type="text/css" rel=stylesheet>
+    <script src="scripts/blogScript.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="imgs/kotori.png" alt="Logo" style="width: 120px; transform: scale(-1,-1);">
+    </header>
+    <nav>
+        <a href="index.html">Pleblist</a><a href="songlist.html">Song list</a><a href="login.html">Login</a><a href="blog.html">Devblog</a><a href="dokumentti.html">Dokumentti</a>
+    </nav>
+    <main class="blog">
+        <button name="new" onclick="newPost()">Uusi</button>
+        <section class="postList">
+            <article id="newPost">
+                <textarea name="postText" rows="5" cols="50" placeholder="Teksti tähän..."></textarea><br>
+                <button name="add">Add</button>
+            </article>
+        </section>
+        <section class="postList">
+            <article class="post">
+                <p class="date">6.11.2016</p>
+                <h1 class="blogHeader">POst 1</h1>
+                <p>asdasdasdadasdasda</p>
+                <hr>
+                <p class="footer">aamo</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <ul><li>Server time: 00:00:00</li><li>asdasdasdasdasd</li></ul>
+    </footer>
+</body>

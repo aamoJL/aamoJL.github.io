@@ -1,0 +1,339 @@
+body {
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    background: url("../imgs/kotori.png");
+    background-repeat: no-repeat;
+    background-position: right bottom 49px, left bottom;
+    background-size: 800px 800px, auto;
+    background-attachment: fixed;
+}
+header {
+    background-color: #ff9ec6;
+    height: 120px;
+    padding: 0px;
+    margin: 0px;
+}
+a {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 25;
+    color: black;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 3px;
+    border-top: 3px solid transparent;
+}
+a:hover {
+    border-color: black;
+}
+nav {
+    background-color: grey;
+    height: auto;
+    padding-left: 120px;
+    box-shadow: 0px 3px 10px -2px #808080;
+}
+main {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+main.loginMain {
+    max-width: 300px;
+}
+main.blog {
+    max-width: 800px;
+}
+section {
+    width: 50%;
+    height: auto;
+    float:left;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+section.postList {
+    width: 100%;
+}
+section.queue {
+    margin-left: auto;
+    margin-right: auto;
+
+
+    width: 48%;
+    margin: 1%;
+    height: auto;
+    margin-bottom: 100px;
+    box-shadow: 0px 3px 10px -2px #808080;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 14px solid #FF9DC6;
+    border-radius: 0px 0px 10px 10px;
+}
+article {
+    background-color: white;
+    width: auto;
+    height: 100px;
+    box-shadow: 0px 3px 10px -2px #808080;
+    position: relative;
+    padding: 10px;
+}
+article.login {
+    height: auto;
+    width: auto;
+}
+article.post {
+    width: auto;
+    height: auto;
+}
+#playerButtons {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #FF9DC6;
+    position: relative;
+    padding: 0;
+}
+button.playerButton {
+    color: #FF9DC6;
+    background-color: #FFFFFF;
+    border: 0;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/*    Sliderin stylet eri selaimille --------------------*/
+
+
+input[type=range] {
+    -webkit-appearance: none;
+    max-width: 500px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: absolute;
+    top: 40%;
+    right: 0;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px #000000, 0px 0px 0px #0d0d0d;
+    background: #ffffff;
+    border-radius: 25px;
+    border: 0px solid #000101;
+}
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 2.9px #000000, 0px 0px 0px #0d0d0d;
+    border: 4px solid #ff9dc6;
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7.5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ffffff;
+}
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px #000000, 0px 0px 0px #0d0d0d;
+    background: #ffffff;
+    border-radius: 25px;
+    border: 0px solid #000101;
+}
+input[type=range]::-moz-range-thumb {
+    box-shadow: 0px 0px 2.9px #000000, 0px 0px 0px #0d0d0d;
+    border: 4px solid #ff9dc6;
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    background: #ffffff;
+    cursor: pointer;
+}
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #f2f2f2;
+    border: 0px solid #000101;
+    border-radius: 50px;
+    box-shadow: 0px 0px 2px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+    background: #ffffff;
+    border: 0px solid #000101;
+    border-radius: 50px;
+    box-shadow: 0px 0px 2px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+    box-shadow: 0px 0px 2.9px #000000, 0px 0px 0px #0d0d0d;
+    border: 4px solid #ff9dc6;
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    background: #ffffff;
+    cursor: pointer;
+    height: 5px;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #ffffff;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ffffff;
+}
+
+
+/*    -----------------------------------------------------*/
+input.loginInput {
+    margin: 5px;
+}
+
+aside {
+    background-color: rgba(255, 255, 255, 0.8);
+    position: static;
+    max-width: 40%;
+    max-height: 700px;
+    margin-bottom: 10px;
+    border-left: 2px solid #FF9DC6;
+    border-right: 14px solid #FF9DC6;
+    box-shadow: 0px 3px 10px -2px #808080;
+    border-radius: 0px 10px 10px 0px;
+    overflow: auto;
+    float: left;
+}
+#playlistButton{
+    position: absolute;
+    float: left;
+    margin-top: 25;
+}
+#newPost {
+    display: none;
+}
+/*    player wrapper*/
+.wrapper {
+    padding-bottom: 56.25%;
+    position: relative;
+    padding-top: 25px;
+    height: 0;
+}
+iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+td {
+    width: 100%;
+    height: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+    white-space: nowrap;
+}
+tr td:first-child {
+    max-width: 1px;
+    overflow: hidden;
+}
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+table.listTable {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+tr:hover {
+    background-color: lightgrey;
+}
+footer {
+    background-color: grey;
+    color: lightgrey;
+    position: fixed;
+    bottom: 0;
+    height: 49px;
+    width: 100%;
+    box-shadow: inset 0px 7px 10px -7px black;
+}
+ul {
+    float: left;
+}
+li {
+    display: inline-block;
+    list-style: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-right: 1px solid lightgray;
+}
+ul > li {
+    vertical-align: middle;
+}
+h1.listHeader {
+    padding: 20px 0;
+    text-align: center;
+    margin: auto;
+    background-color: white;
+    border-bottom: 2px solid #FF9DC6;
+}
+h1.blogHeader {
+    margin-top: 0;
+}
+p.footer {
+    font-size: 14;
+    font-style: italic;
+}
+p.date {
+    font-size: 14;
+    text-align: right;
+    margin: 0;
+}
+
+/*    nämä, jos kapea ikkuna*/
+@media screen and (max-width: 610px ) {
+    aside {
+        position: static;
+        overflow: auto;
+        float: left;
+        max-width: 100%;
+        width: auto;
+        border-top: 2px solid #FF9DC6;
+        border-right: 0;
+        border-left: 0;
+        border-bottom: 14px solid #FF9DC6;
+        border-radius: 0px;
+        margin-bottom: 100px;
+        border-radius: 0px 0px 10px 10px;
+    }
+    ul {
+        float: none;
+        text-align: center;
+    }
+    section {
+        width: 100%;
+    }
+    #playlistButton {
+        position: static;
+    }
+}
+/*    nämä, jos lyhyt ikkuna*/
+@media screen and (max-height: 935px ){
+    aside {
+        height: 560px;
+    }
+}
