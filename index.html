@@ -1,66 +1,73 @@
 <head>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="styles/style.css" type="text/css" rel=stylesheet>
-    <script src="scripts/indexScript.js"></script>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="style.css" type="text/css" rel=stylesheet>
 </head>
 
 <body>
-    <header>
-        <img src="imgs/kotori.png" alt="Logo" style="width: 120px; transform: scale(-1,-1);">
-    </header>
-    <nav>
-        <a href="index.html">Pleblist</a><a href="songlist.html">Song list</a><a href="login.html">Login</a><a href="blog.html">Devblog</a><a href="dokumentti.html">Dokumentti</a>
-    </nav>
-    <main>
-        <section>
-            <div class="wrapper">
-                <iframe src="https://www.youtube.com/embed/zbgBKQcBV6A" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <article id=playerButtons>
-                <button class="playerButton" id="play">Play</button><button class="playerButton" id="mute">Mute</button><input type=range>
-            </article>
-            <article>
-                <h1>Lisää kappale</h1>
-                <input type="text" name="song" placeholder="Syötä linkki..."><button>>></button>
-            </article>
-        </section>
-        <aside id="playlist">
-            
-            <table>
-                <tr><td>aside</td><td>123</td></tr>
-                <tr><td>asdasd</td><td>123</td></tr>
-                <tr><td>asdasd</td><td>123</td></tr>
-                <tr><td>asdasduihasuidhasiudhasidhauisdhuasidhasidhaisdhaisdhiashdiuasd</td><td>123</td></tr>
-                <tr><td>asdasd</td><td>123</td></tr>
-                <tr><td>asdasd</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-                <tr><td>Draft - Forfeits</td><td>123</td></tr>
-            </table>
-        </aside>
-        <button id="playlistButton" onclick="closeList()">Close</button>
-    </main>
-    <footer>
-        <ul><li>Server time: 00:00:00</li><li>asdasdasdasdasd</li></ul>
-    </footer>
+  <div class="box header">
+    <h1 class="center">Joni Laukka</h1>
+    <h2 class="center">Junior front-end developer <a href="https://www.linkedin.com/company/wimmalab/" target="_blank">@WIMMA Lab</a></h2>
+    <ul class="center contact-info no-padding">
+      <li>
+          <a href="https://www.linkedin.com/in/jonilaukka/" target="_blank">
+            <img alt="W3Schools" src="LI-Logo.png" style="height: 2em; margin-bottom: 1em;">
+          </a>
+      </li>
+      <li>jonilaukka(a)outlook.com</li>
+    </ul>
+    <p>! Work In Progress !</p>
+  </div>
+  <div class="box">
+    <h1 class="center">
+      About me
+    </h1>
+    <p class="center">Fourth-year Software Engineering student at JAMK University of Applied Sciences.</p>
+    <h2>Skills</h2>
+    <ul class="center">
+      <li>Javascript | React.js</li>
+      <li>Android | Java</li>
+      <li>C#</li>
+      <li>Unity</li>
+      <li>MySQL</li>
+    </ul>
+    <h2>Interests</h2>
+    <ul class="center">
+      <li>Game Development</li>
+      <li>Design Patterns</li>
+    </ul>
+  </div>
+  <h1 class="center">Portfolio</h1>
+  <div class="box">
+    <h2>TACS</h2>
+    <a href="https://gitlab.labranet.jamk.fi/wimma-lab-2019/overflow">Gitlab</a>
+    <a href="http://wimma-lab-2019.pages.labranet.jamk.fi/overflow/site/">Project team's website</a>
+    <p>Updated version of an old situational awareness system for EHASA ry's airsoft games.</p>
+  </div>
+  <div class="box">
+    <h2>Playlist website</h2>
+    <a href="https://student.labranet.jamk.fi/~H9031/pleblist/index.php">Website</a>
+    <p>School project website where users can add videos to a playlist that updates automatically when playing video ends or is skipped.<br>
+      Videos can be skipped so the next video in the list will be played or user can choose a video from the playlist to play.<br>
+      There are also a blog in the website where users can add blog posts. Login does nothing...
+    </p>
+  </div>
+  <div class="box">
+    <h2>Vehicle GPS-tracker</h2>
+    <p>
+      Vehicle tracking application prototype for Android devices made for <a href="https://aitiofinland.com/">Aitio Finland Oy</a> in a school project course.
+    </p>
+  </div>
+  <div class="box">
+    <h2>Pulkmuzzle</h2>
+    <a href="https://www.youtube.com/watch?v=Fvg0rWqUUxQ">Trailer video</a>
+    <a href="https://student.labranet.jamk.fi/~H9031/ttw0211-game-basics/pulkmuzzle/">Playable game</a>
+    <p>Video game</p>
+  </div>
+  <div class="box">
+      <h2>Uber Simulator</h2>
+      <a href="https://github.com/aamoJL/ubersim">Github</a>
+      <a href="https://aamojl.github.io/ubersim/">Playable game</a>
+      <p>Video game</p>
+    </div>
 </body>
