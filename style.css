@@ -67,3 +67,12 @@ ul{
   padding: 0;
 }
 
+ol{
+  padding: 0;
+}
+
+.about{
+  background-color: var(--highlight-bg-color);
+  color: var(--main-bg-color);
+}
+
