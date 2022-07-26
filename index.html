@@ -1,91 +1,398 @@
+<!DOCTYPE html>
 <head>
-  <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link href="style.css" type="text/css" rel=stylesheet>
-</head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <link href="style.css" type="text/css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet" />
 
+  <script src="index.js" type="text/javascript"></script>
+</head>
 <body>
-  <div class="box header">
-    <h1 class="center">Joni Laukka</h1>
-    <h2 class="center">Junior front-end developer <a href="https://www.linkedin.com/company/wimmalab/" target="_blank">@WIMMA Lab</a></h2>
-    <ul class="center contact-info no-padding">
-      <li>
-          <a href="https://www.linkedin.com/in/jonilaukka/" target="_blank">
-            <img alt="W3Schools" src="LI-Logo.png" style="height: 2em; margin-bottom: 1em;">
-          </a>
-      </li>
-      <li>jonilaukka(a)outlook.com</li>
-    </ul>
-    <p>! Work In Progress !</p>
+  <div id="header" class="page-container">
+    <div class="row center">
+      <div id="header-info" class="col">
+        <div class="header-title">
+          <h1>Joni Laukka</h1>
+          <div class="header-contact-icons">
+            <a href="https://github.com/aamoJL" target="_blank"><img alt="LinkedIn-logo" src="logos/GitHub-Mark-64px.png" class="contact-icon" /></a>
+            <a href="https://www.linkedin.com/in/joni-laukka/" target="_blank"><img alt="LinkedIn-logo" src="logos/LI-In-Bug.png" class="contact-icon" /></a>
+          </div>
+        </div>
+        <p>Software Engineering student at JAMK University of Applied Sciences</p>
+        <div>
+          <p
+            ><b><span class="font-smaller">Interests:</span></b
+            ><br />Data visualization <span class="text-divider">|</span> Design Patterns <span class="text-divider">|</span> Virtual Reality</p
+          >
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="box about">
-    <h1 class="center">
-      About me
-    </h1>
-    <p class="center">Fourth-year Software Engineering student at JAMK University of Applied Sciences.</p>
+  <nav id="navbar">
+    <div onclick="scrollToId('skills')">Skills</div>
+    <div onclick="scrollToId('experience')">Job experience</div>
+    <div onclick="scrollToId('projects')">Projects</div>
+  </nav>
+  <div id="skills" class="page-container page-divider">
     <h2>Skills</h2>
-    <i>Best</i>
-    <ol class="center">
-      <li>C#</li>
-      <li>Javascript | React.js</li>
-      <li>Unity</li>
-    </ol>
-    <i>Some experience</i>
-    <ol class="center"></ol>
-      <li>Android | Java</li>
-      <li>MySQL</li>
-    </ol>
-    <h2>Interests</h2>
-    <ul class="center">
-      <li>Game Development</li>
-      <li>Design Patterns</li>
-    </ul>
+    <div class="row center">
+      <div class="skills-box">
+        <div class="row skill-texts">
+          <h3>Web Fullstack</h3>
+          <div class="col" style="gap: 0.25em">
+            <div class="row" style="gap: 0.25em 1em; flex-wrap: wrap">
+              <div class="skill-text">Frontend:</div>
+              <div class="skill-text"> <img src="logos/512px-React-icon.png" alt="React" class="skill-img" /><span>React</span> </div>
+              <div class="skill-text"> <img src="logos/bootstrap-logo.png" alt="Bootstrap" class="skill-img" /><span>Bootstrap</span> </div>
+              <div class="skill-text"> <img src="logos/MUI-logo.png" alt="Material UI" class="skill-img" /><span>Material UI</span> </div>
+            </div>
+            <div class="row" style="gap: 0.25em 1em; flex-wrap: wrap">
+              <div class="skill-text">Backend:</div>
+              <div class="skill-text"> <img src="logos/nodejs-new-pantone-black.svg" alt="Node.js" class="skill-img" /><span>Node.js</span> </div>
+              <div class="skill-text"> <img src="logos/feathersjs_logo.png" alt="Feathers" class="skill-img" /><span>Feathers.js (Node.js)</span> </div>
+            </div>
+          </div>
+        </div>
+        <div class="row skill-texts">
+          <h3>Software</h3>
+          <div class="skill-text"> <img src="logos/C_sharp_Icon.png" alt="WPF" class="skill-img" /><span>.NET</span> </div>
+          <div class="skill-text"> <img src="logos/1280px-Electron_Software_Framework_Logo.png" alt="Electron" class="skill-img" /><span>Electron (Node.js)</span> </div>
+          <div class="skill-text"> <img src="logos/Android_logo.png" alt="Android" class="skill-img" /><span>Android (Java)</span> </div>
+        </div>
+        <div class="row skill-texts">
+          <h3>Database</h3>
+          <div class="skill-text"> <img src="logos/logo-mysql-170x115.png" alt="MySQL" class="skill-img" /><span>MYSQL</span> </div>
+          <div class="skill-text"> <img src="" alt="" class="skill-img" /><span>PostgreSQL</span> </div>
+        </div>
+        <div class="row skill-texts">
+          <h3>Video Games</h3>
+          <div class="skill-text"> <img src="logos/Unity-logo.png" alt="Unity" class="skill-img" /><span>UNITY</span> </div>
+          <div class="skill-text"> <img src="logos/Unity-logo.png" alt="Virtaul Reality" class="skill-img" /><span>VIRTUAL REALITY</span> </div>
+          <!-- <div class="skill-text"> <img src="logos/blender_icon_512x512.png" alt="Blender" class="skill-img" /><span>BLENDER</span> </div> -->
+        </div>
+      </div>
+    </div>
   </div>
-  <h1 class="center">Portfolio</h1>
-  <div class="box">
-    <h2>TACS</h2>
-    <i>Role: Front-end developer</i>
-    <i>Technologies: Javascript, React.js</i>
-    <br>
-    <a href="https://gitlab.labranet.jamk.fi/wimma-lab-2019/overflow">Gitlab</a>
-    <a href="http://wimma-lab-2019.pages.labranet.jamk.fi/overflow/site/">Project team's website</a>
-    <p>Updated version of an old situational awareness system for EHASA ry's airsoft games.</p>
+  <div id="experience" class="page-container page-divider">
+    <h2>Job experience</h2>
+    <div class="font-smaller row center">
+      <div class="shadow-box experience-box">
+        <div class="row">
+          <a href="http://wimma-lab-2019.pages.labranet.jamk.fi/overflow/site/" target="_blank" class="job-title-link">
+            <img src="logos/logo_wimma.png" alt="Wimma" class="tech-icon-big" />
+            <h3>WIMMA Lab - Haastix 2022</h3>
+          </a>
+        </div>
+        <div class="card-info col">
+          2022 &mdash; 3 Months
+          <div class="col">
+            <a href="https://gitlab.labranet.jamk.fi/wimma-lab-2022/iotitude" target="_blank" class="end">
+              <img src="logos/gitlab-logo-gray-stacked-rgb.png" alt="Gitlab" class="tech-icon-big" />
+            </a>
+          </div>
+        </div>
+        <p class="experience-info">
+          Role: Fullstack developer
+          <br />
+          Team size: 7
+          <br />
+          Technologies: Javascript, React.js, Node.js, Camera
+        </p>
+        <p>Description WIP...</p>
+      </div>
+    </div>
+    <div class="font-smaller row center">
+      <div class="shadow-box experience-box">
+        <div class="row">
+          <a href="http://wimma-lab-2019.pages.labranet.jamk.fi/overflow/site/" target="_blank" class="job-title-link">
+            <img src="logos/logo_wimma.png" alt="Wimma" class="tech-icon-big" />
+            <h3>WIMMA Lab - Project TACS</h3>
+          </a>
+        </div>
+        <div class="card-info col">
+          2019 &mdash; 3 Months
+          <div class="col">
+            <a href="https://gitlab.labranet.jamk.fi/wimma-lab-2019/overflow" target="_blank" class="end">
+              <img src="logos/gitlab-logo-gray-stacked-rgb.png" alt="Gitlab" class="tech-icon-big" />
+            </a>
+          </div>
+        </div>
+        <p class="experience-info">
+          Role: Front-end developer
+          <br />
+          Team size: 8
+          <br />
+          Technologies: Javascript, React.js, Nest.js, Device tracking
+        </p>
+        <p>I was part of a team making website for a realtime situational awareness system for EHASA ry's airsoft games that can be used to track player positions and give them information, missions and orders by drawing shapes on the app's map and writing notes.</p>
+      </div>
+    </div>
   </div>
-  <div class="box">
-    <h2>Playlist website</h2>
-    <i>Technologies: Javascript, PHP</i>
-    <br>
-    <a href="https://student.labranet.jamk.fi/~H9031/pleblist/index.php">Website</a>
-    <p>School project website where users can add videos to a playlist that updates automatically when playing video ends or is skipped.<br>
-      Videos can be skipped so the next video in the list will be played or user can choose a video from the playlist to play.<br>
-      There are also a blog in the website where users can add blog posts. Login does nothing...
-    </p>
+  <div id="projects" class="page-container page-divider">
+    <h2>Projects</h2>
+    <div class="row center">
+      <div class="projects-box">
+        <div class="row project-boxes">
+          <h3 class="project-category-title">Software</h3>
+          <div class="project-box">
+            <div class="project-thumbnail" onclick="showModal('mtg-modal')">
+              <div class="project-thumbnail-image" style="background-image: url('thumbnails/MTG-builder-thumbnail.png')"></div>
+              <div class="project-thumbnail-hover hidden col center">
+                <div>WPF / .NET / C#</div>
+                <div class="project-thumbnail-button">MORE</div>
+              </div>
+            </div>
+            <h3 class="project-title">Magic the Gathering Deck Building & Testing App</h3>
+            <div id="mtg-modal" class="modal hidden">
+              <div class="modal-bg" onclick="hideModals()"></div>
+              <div class="modal-body">
+                <h3>Magic the Gathering Deck Building & Testing App</h3>
+                <div id="mtg-slideshow" class="slideshow" data-slideindex="0">
+                  <div class="slideshow-prev" onclick="switchSlide('mtg-slideshow' , -1)">
+                    <div class="arrow">&#10094;</div>
+                  </div>
+                  <div class="slideshow-next" onclick="switchSlide('mtg-slideshow' , 1)">
+                    <div class="arrow">&#10095;</div>
+                  </div>
+                  <img src="thumbnails/mtg-building.png" alt="building-image" class="slide active" />
+                  <img src="thumbnails/mtg-testing.png" alt="testing-image" class="slide" />
+                  <div class="slide-dots">
+                    <span class="slide-dot active"></span>
+                    <span class="slide-dot"></span>
+                  </div>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/aamoJL/MTG-builder" target="_blank" class="project-link">Github</a>
+                </div>
+                <div class="project-description">
+                  <p class="project-info">Technologies: WPF, .NET, C#</p>
+                  <p>Application that can be used to store digital collections of MTG cards, build MTG decks and test the decks against each other.</p>
+                  <h3>Features</h3>
+                  <ul>
+                    <li>Fetch cards from selected card set using Scryfall's API</li>
+                    <li>Build card collections / decks</li>
+                    <li>Playtest your decks against each other</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-box">
+            <div class="project-thumbnail" onclick="showModal('lm-modal')">
+              <div class="project-thumbnail-image" style="background-image: url('thumbnails/la-mulana-map-tool-thumbnail.png')"></div>
+              <div class="project-thumbnail-hover hidden col center">
+                <div>Electron / Node.js</div>
+                <div class="project-thumbnail-button">MORE</div>
+              </div>
+            </div>
+            <h3 class="project-title">Map&Text Notepad Application for La-Mulana 2 Game</h3>
+            <div id="lm-modal" class="modal hidden">
+              <div class="modal-bg" onclick="hideModals()"></div>
+              <div class="modal-body">
+                <h3>Map&Text Notepad Application for La-Mulana 2 Game</h3>
+                <div id="lm2-slideshow" class="slideshow" data-slideindex="0">
+                  <div class="slideshow-prev" onclick="switchSlide('lm2-slideshow' , -1)">
+                    <div class="arrow">&#10094;</div>
+                  </div>
+                  <div class="slideshow-next" onclick="switchSlide('lm2-slideshow' , 1)">
+                    <div class="arrow">&#10095;</div>
+                  </div>
+                  <img src="thumbnails/lm2-maps.png" alt="maps-image" class="slide active" />
+                  <img src="thumbnails/lm2-notes.png" alt="notes-image" class="slide" />
+                  <div class="slide-dots">
+                    <span class="slide-dot active"></span>
+                    <span class="slide-dot"></span>
+                  </div>
+                </div>
+                <div class="project-links">
+                  <a href="https://aamojl.github.io/LM2Notepad/demo/map.html" target="_blank" class="project-link">Map Tool Web Demo</a>
+                  <a href="https://github.com/aamoJL/LM2Notepad" target="_blank" class="project-link">Github</a>
+                </div>
+                <div class="project-description">
+                  <p class="project-info">Technologies: Electron / Node.js, text recognition (OCR)</p>
+                  <p>Application for taking notes, taking screenshots and drawing maps while playing the La-Mulana 2 puzzle videogame. The application can be used to convert the game's hint texts to text notes using Tesseract OCR image scan engine.</p>
+                  <h3>Features</h3>
+                  <ul>
+                    <li>Write notes or scan game notes using Tesseract OCR</li>
+                    <li>Build maps while playing the game using screenshots</li>
+                    <li>Drag and drop screenshots to map grid</li>
+                    <li>Drag and drop map icons to the map</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-box">
+            <div class="project-thumbnail" onclick="showModal('android-tracker-modal')">
+              <div class="project-thumbnail-image" style="background-image: url('logos/Android_logo.png')"></div>
+              <div class="project-thumbnail-hover hidden col center">
+                <div>Android / Java</div>
+                <div class="project-thumbnail-button">MORE</div>
+              </div>
+            </div>
+            <h3 class="project-title">Vehicle GPS-tracker prototype</h3>
+            <div id="android-tracker-modal" class="modal hidden">
+              <div class="modal-bg" onclick="hideModals()"></div>
+              <div class="modal-body">
+                <h3>Vehicle GPS-tracker prototype</h3>
+                <div class="project-description">
+                  <p class="project-info">Role: Developer, Designer<br />Team size: 4<br />Technologies: Android / Java, Device tracking</p>
+                  <p
+                    >Vehicle tracking application prototype for Android devices made for
+                    <a href="https://aitiofinland.com/" target="_blank">Aitio Finland Oy</a>
+                    in a school project course. The project is not open source.</p
+                  >
+                  <h3>Features</h3>
+                  <ul>
+                    <li>Track android device's location and send it to server</li>
+                    <li>Watch recorded location routes on map</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row project-boxes">
+          <h3 class="project-category-title">Websites</h3>
+          <div class="project-box">
+            <div class="project-thumbnail" onclick="showModal('playlist-modal')">
+              <div class="project-thumbnail-image" style="background-image: url('thumbnails/pleblist_thumbnail.PNG')"></div>
+              <div class="project-thumbnail-hover hidden col center">
+                <div>PHP</div>
+                <div class="project-thumbnail-button">MORE</div>
+              </div>
+            </div>
+            <h3 class="project-title">Playlist website</h3>
+            <div id="playlist-modal" class="modal hidden">
+              <div class="modal-bg" onclick="hideModals()"></div>
+              <div class="modal-body">
+                <h3>Playlist website</h3>
+                <div class="project-video">
+                  <div id="playlist-slideshow" class="slideshow" data-slideindex="0">
+                    <img src="thumbnails/pleblist_thumbnail.PNG" alt="playlist-image" class="slide active" />
+                  </div>
+                </div>
+                <div class="project-links">
+                  <a href="https://student.labranet.jamk.fi/~H9031/pleblist/index.php" target="_blank" class="project-link">Website</a>
+                </div>
+                <div class="project-description">
+                  <p class="project-info">Technologies: PHP, Javascript</p>
+                  <p
+                    >School project website where users can add videos to a playlist that updates automatically when playing video ends or is skipped.<br />
+                    Videos can be skipped so the next video in the list will be played or user can choose a video from the playlist to play.<br />
+                    There are also a blog in the website where users can add blog posts. Login does nothing...</p
+                  >
+                  <h3>Features</h3>
+                  <ul>
+                    <li>Add Youtube videos to the playlist using Youtube API</li>
+                    <li>All users see the same video</li>
+                    <li>The next video will play when the current video ends</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-box">
+            <div class="project-thumbnail" onclick="showModal('tacs-modal')">
+              <div class="project-thumbnail-image" style="background-image: url('thumbnails/TACS_thumbnail.PNG')"></div>
+              <div class="project-thumbnail-hover hidden col center">
+                <div>React / JSX</div>
+                <div class="project-thumbnail-button">MORE</div>
+              </div>
+            </div>
+            <h3 class="project-title">TACS - Situational Awareness System for Airsoft Games</h3>
+            <div id="tacs-modal" class="modal hidden">
+              <div class="modal-bg" onclick="hideModals()"></div>
+              <div class="modal-body">
+                <h3>TACS - Situational Awareness System for Airsoft Games</h3>
+                <div class="project-video" style="margin-bottom: 1em"><iframe width="560" height="349" src="https://www.youtube-nocookie.com/embed/PUbhPWmNI3k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="project-links">
+                  <a href="https://gitlab.labranet.jamk.fi/wimma-lab-2019/overflow" target="_blank" class="project-link">Gitlab</a>
+                </div>
+                <div class="project-description">
+                  <p class="project-info"
+                    >Role: Front-end developer
+                    <br />
+                    Team size: 8
+                    <br />
+                    Technologies: Javascript, React.js, Nest.js, Device tracking, SQL</p
+                  >
+                  <p>Realtime situational awareness system for EHASA ry's airsoft games that can be used to track player positions and give them information, missions and orders by drawing shapes on the app's map and writing notes.</p>
+                  <h3>Features</h3>
+                  <ul>
+                    <li>Create airsoft games / join to the games</li>
+                    <li>Multiple teams in the games</li>
+                    <li>Track player position</li>
+                    <li>Send messages / tasks to players / teams</li>
+                    <li>Draw shapes on map</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row project-boxes">
+          <h3 class="project-category-title">Video Games</h3>
+          <div class="project-box">
+            <div class="project-thumbnail" onclick="showModal('pulk-modal')">
+              <div class="project-thumbnail-image" style="background-image: url('logos/Unity-logo.png')"></div>
+              <div class="project-thumbnail-hover hidden col center">
+                <div>Unity / C#</div>
+                <div class="project-thumbnail-button">MORE</div>
+              </div>
+            </div>
+            <h3 class="project-title">Pulkmuzzle</h3>
+            <div id="pulk-modal" class="modal hidden">
+              <div class="modal-bg" onclick="hideModals()"></div>
+              <div class="modal-body">
+                <h3>Pulkmuzzle</h3>
+                <div class="project-video"><iframe width="560" height="349" src="https://www.youtube-nocookie.com/embed/vm41hDf1sx4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="project-links">
+                  <a href="https://student.labranet.jamk.fi/~H9031/ttw0211-game-basics/pulkmuzzle/" target="_blank" class="project-link">Web Demo</a>
+                </div>
+                <div class="project-description">
+                  <p class="project-info">Role: Gameplay Developer, Designer<br />Team size: 4<br />Technologies: Unity, C#</p>
+                  <p>Video game where the goal is to inflict as much damage as possible to the player's character by sliding down a hill with a sled, avoiding obstacles and launching the character from a ramp to a busy street.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-box">
+            <div class="project-thumbnail" onclick="showModal('uber-modal')">
+              <div class="project-thumbnail-image" style="background-image: url('logos/Unity-logo.png')"></div>
+              <div class="project-thumbnail-hover hidden col center">
+                <div>Unity / C#</div>
+                <div class="project-thumbnail-button">MORE</div>
+              </div>
+            </div>
+            <h3 class="project-title">Uber Simulator</h3>
+            <div id="uber-modal" class="modal hidden">
+              <div class="modal-bg" onclick="hideModals()"></div>
+              <div class="modal-body">
+                <h3>Uber Simulator</h3>
+                <div class="project-video"><iframe width="560" height="349" src="https://www.youtube-nocookie.com/embed/vm41hDf1sx4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="project-links">
+                  <a href="https://aamojl.github.io/ubersim/" target="_blank" class="project-link">Web demo</a>
+                  <a href="https://github.com/aamoJL/ubersim" target="_blank" class="project-icon-link"></a>
+                </div>
+                <div class="project-description">
+                  <p class="project-info">Technologies: Unity / C#</p>
+                  <p>Video game with two different game modes. Main game's goal is to be an Uber taxi driver and collect points by taking customers where they want to go while doing things they want the player to do, like drift or go fast.</p>
+                  <p>Uber Stage is a game mode where the player needs to drive to the end of a road while drifting as much as possible.</p>
+                  <h3>Features</h3>
+                  <ul>
+                    <li>Multiple customer types</li>
+                    <li>Drifting</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="box">
-    <h2>Vehicle GPS-tracker</h2>
-    <i>Role: Developer, Designer</i>
-    <i>Technologies: Android, Java</i>
-    <br>
-    <p>
-      Vehicle tracking application prototype for Android devices made for <a href="https://aitiofinland.com/">Aitio Finland Oy</a> in a school project course.
-    </p>
-  </div>
-  <div class="box">
-    <h2>Pulkmuzzle</h2>
-    <i>Role: Lead Developer, Designer</i>
-    <i>Technologies: Unity, C#</i>
-    <br>
-    <a href="https://www.youtube.com/watch?v=Fvg0rWqUUxQ">Trailer video</a>
-    <a href="https://student.labranet.jamk.fi/~H9031/ttw0211-game-basics/pulkmuzzle/">Playable game</a>
-    <p>Video game...</p>
-  </div>
-  <div class="box">
-    <br>
-    <h2>Uber Simulator</h2>
-    <i>Role: Lead Developer, Lead Designer</i>
-    <i>Technologies: Unity, C#</i>
-    <a href="https://github.com/aamoJL/ubersim">Github</a>
-    <a href="https://aamojl.github.io/ubersim/">Playable game</a>
-    <p>Video game...</p>
-  </div>
+  <footer> </footer>
 </body>
