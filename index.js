@@ -251,7 +251,7 @@ class Project {
 const primaryProjects = [
   new Project({
     title: "MTG-Application",
-    description: "Card collection, deck building and testing application for Magic the Gathering card game. Uses Scryfall API to fetch cards.",
+    description: "Card collection, deck building and testing application for Magic the Gathering card game. Uses Scryfall API to fetch card information.",
     badges: [{ title: ".Net" }, { title: "C#" }, { title: "Desktop", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/MTG-Application",
     thumbnailFile: "MTG-Application-thumbnail.png"

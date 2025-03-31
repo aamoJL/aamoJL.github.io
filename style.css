@@ -11,7 +11,8 @@
 
   --border-color: #e0e0e0;
 
-  --paper-texture-uri: url("assets/paper-texture.png");
+  --paper-texture-uri: url(assets/paper-texture.png);
+  --noise-texture-uri: url(assets/noisy-texture-100x100-o6-d10-c-FBFAF8-t1.png);
 
   --spacing1: 4px;
   --spacing2: 8px;
@@ -21,10 +22,22 @@
 
 /*#region --------------- Basic Elements --------------- */
 body {
+  position: relative;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-primary);
   background-color: var(--background-color);
   margin: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--noise-texture-uri);
+    opacity: .7;
+    z-index: -1;
+  }
 }
 
 header {
@@ -32,6 +45,7 @@ header {
   justify-content: center;
   background-color: var(--background-primary);
   padding: 5rem 1rem;
+  box-shadow: 0 2px 5px var(--border-color);
 }
 
 section {
@@ -126,6 +140,10 @@ p {
 
   .card-body {
     position: relative;
+
+    p {
+      line-height: 1.5em;
+    }
   }
 
   .card-footer {
@@ -382,7 +400,6 @@ img.hover-pop {
     opacity: .5;
   }
 }
-
 
 /* #region ----------------- Image Popup ---------------------- */
 .popup-open {
