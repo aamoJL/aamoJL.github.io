@@ -93,11 +93,10 @@
   <section>
     <h1 class="fancy-title">Projects</h1>
     <template id="project-card-template">
-      <link href="style.css" type="text/css" rel="stylesheet" />
       <div name="root" class="project-card card">
-        <div class="card-thumbnail">
-          <!-- <div class="popup-background"></div> -->
-          <img name="thumbnail" src="" alt="Thumbnail">
+        <div name="thumbnail" class="card-thumbnail image-popup">
+          <div class="popup-background"></div>
+          <img src="" alt="Thumbnail">
         </div>
         <div class="card-body">
           <div class="project-header">
@@ -116,8 +115,3 @@
     <div id="projects" class="project-cards"></div>
   </section>
 </body>
-
-<!-- 
-TODO:
-add image popup to the project?
-  -->

@@ -9,7 +9,6 @@ class ProjectCard extends HTMLElement {
 
   connectedCallback() {
     const template = document.getElementById("project-card-template");
-    const shadow = this.attachShadow({ mode: "open" });
     /** @type {DocumentFragment} */
     const content = template.content.cloneNode(true);
 
@@ -22,11 +21,6 @@ class ProjectCard extends HTMLElement {
     }
 
     content.querySelector("[name='project-title']").innerText = this.props.title;
-
-    if (this.props.thumbnailFile)
-      content.querySelector("img[name='thumbnail']")?.setAttribute("src", `assets/thumbnails/${this.props.thumbnailFile}`);
-    else
-      content.querySelector("img[name='thumbnail']")?.parentElement.classList.add("collapsed");
 
     if (this.props.gitUri) {
       const link = content.querySelector("a[name='project-git']");
@@ -85,38 +79,95 @@ class ProjectCard extends HTMLElement {
       });
     }
 
-    shadow.appendChild(content);
+    if (this.props.thumbnailFile) {
+      const thumbnail = content.querySelector("[name='thumbnail']");
+      const img = thumbnail?.querySelector("img");
 
+      if (!thumbnail || !img)
+        return;
 
-    //   const body = document.querySelector("body");
+      img.setAttribute("src", `assets/thumbnails/${this.props.thumbnailFile}`);
 
-    //   const popup = shadow.querySelector(".image-popup");
-    //   const popupSlot = popup.querySelector("slot[name='thumbnail']");
-    //   const img = popupSlot?.assignedElements()[0];
+      // Image popup
+      thumbnail.addEventListener("click", _ => {
+        if (thumbnail.classList.contains("open"))
+          this.closeImagePopup(thumbnail);
+        else
+          this.openImagePopup(thumbnail);
+      });
 
-    //   popupSlot.addEventListener("slotchange", e => {
-    //     console.log(popupSlot.assignedElements());
-    //   });
+      window.addEventListener("resize", () => {
+        if (thumbnail.classList.contains("open"))
+          this.setImagePopupPosition(img);
+      });
+    }
+    else
+      content.querySelector("[name='thumbnail']")?.classList.add("collapsed");
 
-    //   // console.log(popup.querySelector("slot[name='thumbnail']"));
+    this.append(content);
+  }
 
-    //   if (!popup || !img)
-    //     return;
+  /**
+   * @param {HTMLElement} popup 
+   */
+  openImagePopup(popup) {
+    const body = document.querySelector("body");
+    const img = popup.querySelector("img");
 
-    //   popup.addEventListener("click", () => {
-    //     if (popup.classList.contains("open")) {
-    //       body.classList.remove("popup-open");
-    //       popup.classList.remove("open");
-    //       img.style.scale = 1;
-    //       img.style.transform = "";
-    //     }
-    //     else {
-    //       setImagePopupPosition(img);
+    this.setImagePopupPosition(img);
+    body.classList.add("popup-open");
+    popup.classList.add("open");
 
-    //       body.classList.add("popup-open");
-    //       popup.classList.add("open");
-    //     }
-    //   });
+    document.getElementById("popup-background")?.addEventListener("click", () => {
+      this.closeImagePopup(popup);
+    }, { once: true });
+
+  }
+
+  /**
+   * @param {HTMLElement} popup 
+   */
+  closeImagePopup(popup) {
+    const body = document.querySelector("body");
+    const img = popup.querySelector("img");
+
+    body.classList.remove("popup-open");
+    popup.classList.remove("open");
+    img.style.transform = "";
+  }
+
+  /**
+  * @param {HTMLElement} element 
+  */
+  setImagePopupPosition(element) {
+    const finalHeight = window.innerHeight * .8; // Width after transition
+    const finalWidth = window.innerWidth * .8; // Height after transition
+
+    const imgOffsets = this.getElementOffsets(element);
+    const scrollOffset = { x: window.scrollX, y: window.scrollY };
+    const horizontalPosition = -imgOffsets.x + (window.innerWidth - finalWidth) / 2 + scrollOffset.x;
+    const verticalPosition = -imgOffsets.y + (window.innerHeight - finalHeight) / 2 + scrollOffset.y;
+
+    element.style.transform = `translate(${horizontalPosition}px, ${verticalPosition}px)`;
+  }
+
+  /**
+   * @param {HTMLElement} element 
+   * @returns {{x: number, y: number }}
+   */
+  getElementOffsets(element) {
+    var x = element.offsetLeft;
+    var y = element.offsetTop;
+    var parent = element.offsetParent;
+
+    while (parent) {
+      x += parent.offsetLeft;
+      y += parent.offsetTop;
+
+      parent = parent.offsetParent;
+    }
+
+    return { x, y }
   }
 }
 
@@ -138,6 +189,7 @@ function appendProjects(projectLists) {
     const list = projectLists[i];
 
     list.forEach(project => {
+      //asd(project);
       projectsContainer?.append(new ProjectCard(project));
     });
 
@@ -145,86 +197,6 @@ function appendProjects(projectLists) {
       projectsContainer.append(divider.cloneNode(false));
   }
 }
-
-// function initImagePopups() {
-//   const body = document.querySelector("body");
-//   const popups = document.body.querySelectorAll(".image-popup");
-
-//   if (popups.length == 0)
-//     return;
-
-//   window.addEventListener("resize", () => {
-//     popups.forEach(popup => {
-//       const img = popup.getElementsByTagName("img")[0];
-
-//       if (!img)
-//         return;
-
-//       if (popup.classList.contains("open")) {
-//         setImagePopupPosition(img);
-//       }
-//     });
-//   });
-
-//   popups.forEach(popup => {
-//     popup.addEventListener("click", () => {
-//       const img = popup.getElementsByTagName("img")[0];
-
-//       if (!img)
-//         return;
-
-//       if (popup.classList.contains("open")) {
-//         body.classList.remove("popup-open");
-//         popup.classList.remove("open");
-//         img.style.scale = 1;
-//         img.style.transform = "";
-//       }
-//       else {
-//         setImagePopupPosition(img);
-
-//         body.classList.add("popup-open");
-//         popup.classList.add("open");
-//       }
-//     });
-//   });
-
-//   /**
-//   * @param {HTMLElement} element 
-//   */
-//   function setImagePopupPosition(element) {
-//     const margin = 40;
-//     const yRatio = window.innerHeight / (element.height + margin * 2);
-//     const xRatio = window.innerWidth / (element.width + margin * 2);
-//     const scale = Math.min(xRatio, yRatio, 2);
-
-//     const imgOffsets = getElementOffsets(element);
-//     const scrollOffset = { x: window.scrollX, y: window.scrollY };
-//     const horizontalPosition = (((window.innerWidth - element.width) / 2) - (imgOffsets.x + scrollOffset.x)) / scale;
-//     const verticalPosition = (((window.innerHeight - element.height) / 2) - (imgOffsets.y + scrollOffset.y)) / scale;
-
-//     element.style.scale = scale;
-//     element.style.transform = `translate(${horizontalPosition}px, ${verticalPosition}px)`;
-//   }
-
-//   /**
-//    * @param {HTMLElement} element 
-//    * @returns {{x: number, y: number }}
-//    */
-//   function getElementOffsets(element) {
-//     var x = element.offsetLeft;
-//     var y = element.offsetTop;
-//     var parent = element.offsetParent;
-
-//     while (parent) {
-//       x += parent.offsetLeft;
-//       y += parent.offsetTop;
-
-//       parent = parent.offsetParent;
-//     }
-
-//     return { x, y }
-//   }
-// }
 
 class Project {
   /**
