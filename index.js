@@ -226,7 +226,7 @@ const primaryProjects = [
     description: "Card collection, deck building and testing application for Magic the Gathering card game. Uses Scryfall API to fetch card information.",
     badges: [{ title: ".Net" }, { title: "C#" }, { title: "Desktop", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/MTG-Application",
-    thumbnailFile: "MTG-Application-thumbnail.png"
+    thumbnailFile: "mtg-application-thumbnail.png"
   }),
   new Project({
     title: "LM2 Notepad & Mapping Tool",
@@ -241,14 +241,14 @@ const primaryProjects = [
     description: "Cookbook application for Android phones.",
     badges: [{ title: "Kotlin" }, { title: "Jetpack Compose" }, { title: "Android", type: "secondary" }, { title: "MVVM", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/Android-Cookbook",
-    thumbnailFile: "Android-cookbook-thumbnail.png",
+    thumbnailFile: "android-cookbook-thumbnail.png",
   }),
   new Project({
     title: "VOD-Player",
     description: "Offline Twitch VOD player with chat.",
     badges: [{ title: ".Net" }, { title: "C#" }, { title: "Desktop", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/VOD-Player",
-    thumbnailFile: "VODPlayer-thumbnail.png",
+    thumbnailFile: "vod-player-thumbnail.png",
   })
 ]
 
@@ -258,7 +258,7 @@ const wimmaProjects = [
     description: "Realtime situational awareness system prototype for EHASA ry's airsoft games that can be used to track player positions and give them information, missions and orders by text or drawing shapes on the app's map.",
     badges: [{ title: "React" }, { title: "Node.js" }, { title: "Website", type: "secondary" }, { title: "🗃️ Archived", type: "archived" }],
     gitUri: "https://gitlab.labranet.jamk.fi/wimma-lab-2019/overflow",
-    thumbnailFile: "TACS_thumbnail.PNG",
+    thumbnailFile: "tacs-thumbnail.PNG",
     links: [{ url: "https://www.youtube.com/watch?v=PUbhPWmNI3k", text: "Watch the product video" }],
     type: "secondary"
   }),
