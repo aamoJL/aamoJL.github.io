@@ -83,23 +83,22 @@ class ProjectCard extends HTMLElement {
       const thumbnail = content.querySelector("[name='thumbnail']");
       const img = thumbnail?.querySelector("img");
 
-      if (!thumbnail || !img)
-        return;
+      if (thumbnail && img) {
+        img.setAttribute("src", `assets/thumbnails/${this.props.thumbnailFile}`);
 
-      img.setAttribute("src", `assets/thumbnails/${this.props.thumbnailFile}`);
+        // Image popup
+        thumbnail.addEventListener("click", _ => {
+          if (thumbnail.classList.contains("open"))
+            this.closeImagePopup(thumbnail);
+          else
+            this.openImagePopup(thumbnail);
+        });
 
-      // Image popup
-      thumbnail.addEventListener("click", _ => {
-        if (thumbnail.classList.contains("open"))
-          this.closeImagePopup(thumbnail);
-        else
-          this.openImagePopup(thumbnail);
-      });
-
-      window.addEventListener("resize", () => {
-        if (thumbnail.classList.contains("open"))
-          this.setImagePopupPosition(img);
-      });
+        window.addEventListener("resize", () => {
+          if (thumbnail.classList.contains("open"))
+            this.setImagePopupPosition(img);
+        });
+      }
     }
     else
       content.querySelector("[name='thumbnail']")?.classList.add("collapsed");
