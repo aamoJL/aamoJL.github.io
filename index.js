@@ -222,14 +222,14 @@ class Project {
 const primaryProjects = [
   new Project({
     title: "MTG-Application",
-    description: "Card collection, deck building and testing application for Magic the Gathering card game. Uses Scryfall API to fetch card information.",
+    description: "Card collection, deck building and testing application for Magic the Gathering card game.\nUses Scryfall API to fetch card information.",
     badges: [{ title: ".Net" }, { title: "C#" }, { title: "Desktop", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/MTG-Application",
     thumbnailFile: "mtg-application-thumbnail.png"
   }),
   new Project({
     title: "LM2 Notepad & Mapping Tool",
-    description: "Notepad and mapping tool for La-Mulana 2 videogame. Maps can be created by taking screenshots of the game's world while playing. Notes can be written or scanned from the game's hints.",
+    description: "Notepad and mapping tool for La-Mulana 2 videogame.\nMaps can be created by taking screenshots of the game's world while playing. Notes can be written or scanned from the game's hints.",
     badges: [{ title: "Javascript" }, { title: "Node.js" }, { title: "Desktop", type: "secondary" }, { title: "Electron", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/LM2Notepad",
     thumbnailFile: "la-mulana-map-tool-thumbnail.png",
@@ -248,6 +248,14 @@ const primaryProjects = [
     badges: [{ title: ".Net" }, { title: "C#" }, { title: "Desktop", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/VOD-Player",
     thumbnailFile: "vod-player-thumbnail.png",
+  }),
+  new Project({
+    title: "Unity Motion Capture",
+    description: "Motion capture using virtual reality devices for Unity engine.\nWas the project for my school thesis.",
+    badges: [{ title: "Unity" }, { title: "C#" }, { title: "Motion Capture", type: "secondary" }, { title: "Virtual Reality", type: "secondary" }],
+    gitUri: "https://github.com/aamoJL/Unity-Mocap",
+    thumbnailFile: "mocap-thumbnail.png",
+    links: [{ url: "https://github.com/user-attachments/assets/e8a6d130-1aa0-4e17-95c8-a0201a840bdf", text: "Watch the demonstration video" }],
   })
 ]
 
@@ -287,6 +295,6 @@ const otherProjects = [
 //   badges: [{ title: "" }, { title: "" }, { title: "", type: "secondary" }, { title: "", type: "secondary" }],
 //   gitUri: "",
 //   thumbnailFile: "",
-//   links: [{url: "", text: ""}]
+//   links: [{url: "", text: ""}],
 //   type: ""
 // })
