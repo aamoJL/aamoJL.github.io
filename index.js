@@ -60,10 +60,13 @@ class ProjectCard extends HTMLElement {
 
     if (this.props.description) {
       const description = content.querySelector("div[name='description']");
-      const p = document.createElement("p");
-      p.innerText = this.props.description;
 
-      description.append(p);
+      this.props.description.forEach(desc => {
+        const p = document.createElement("p");
+        p.innerText = desc;
+
+        description.append(p);
+      });
     }
 
     if (this.props.links) {
@@ -201,7 +204,7 @@ class Project {
   /**
    * @param {Object} project
    * @param {string} project.title 
-   * @param {string} project.description 
+   * @param {string[]} project.description 
    * @param {{title: string, type: null | "secondary" | "archived"}[]} project.badges 
    * @param {string} project.gitUri 
    * @param {string} project.thumbnailFile 
@@ -222,14 +225,20 @@ class Project {
 const primaryProjects = [
   new Project({
     title: "MTG-Application",
-    description: "Card collection, deck building and testing application for Magic the Gathering card game.\nUses Scryfall API to fetch card information.",
+    description: [
+      "Card collection, deck building and testing application for Magic the Gathering card game.",
+      "The application uses the scryfall.com search API to fetch the card information."
+    ],
     badges: [{ title: ".Net" }, { title: "C#" }, { title: "Desktop", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/MTG-Application",
     thumbnailFile: "mtg-application-thumbnail.png"
   }),
   new Project({
     title: "LM2 Notepad & Mapping Tool",
-    description: "Notepad and mapping tool for La-Mulana 2 videogame.\nMaps can be created by taking screenshots of the game's world while playing. Notes can be written or scanned from the game's hints.",
+    description: [
+      "Notepad and mapping tool for La-Mulana 2 videogame.",
+      "Maps can be created by taking screenshots of the game's world while playing. Notes can be written or scanned from the game's texts using optical character recognition (OCR)."
+    ],
     badges: [{ title: "Javascript" }, { title: "Node.js" }, { title: "Desktop", type: "secondary" }, { title: "Electron", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/LM2Notepad",
     thumbnailFile: "la-mulana-map-tool-thumbnail.png",
@@ -237,21 +246,24 @@ const primaryProjects = [
   }),
   new Project({
     title: "Android Cookbook",
-    description: "Cookbook application for Android phones.",
+    description: ["Cookbook application for Android phones."],
     badges: [{ title: "Kotlin" }, { title: "Jetpack Compose" }, { title: "Android", type: "secondary" }, { title: "MVVM", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/Android-Cookbook",
     thumbnailFile: "android-cookbook-thumbnail.png",
   }),
   new Project({
     title: "VOD-Player",
-    description: "Offline Twitch VOD player with chat.",
+    description: ["Offline livestream video player with chat."],
     badges: [{ title: ".Net" }, { title: "C#" }, { title: "Desktop", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/VOD-Player",
     thumbnailFile: "vod-player-thumbnail.png",
   }),
   new Project({
     title: "Unity Motion Capture",
-    description: "Motion capture using virtual reality devices for Unity engine.\nWas the project for my school thesis.",
+    description: [
+      "Motion capture using virtual reality devices for Unity engine.",
+      "The project was for my school thesis."
+    ],
     badges: [{ title: "Unity" }, { title: "C#" }, { title: "Motion Capture", type: "secondary" }, { title: "Virtual Reality", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/Unity-Mocap",
     thumbnailFile: "mocap-thumbnail.png",
@@ -262,7 +274,7 @@ const primaryProjects = [
 const wimmaProjects = [
   new Project({
     title: "WIMMA Lab: TACS",
-    description: "Realtime situational awareness system prototype for EHASA ry's airsoft games that can be used to track player positions and give them information, missions and orders by text or drawing shapes on the app's map.",
+    description: ["Realtime situational awareness system prototype for EHASA ry's airsoft games that can be used to track player positions and give them information, missions and orders by text or drawing shapes on the app's map."],
     badges: [{ title: "React" }, { title: "Node.js" }, { title: "Website", type: "secondary" }, { title: "🗃️ Archived", type: "archived" }],
     gitUri: "https://gitlab.labranet.jamk.fi/wimma-lab-2019/overflow",
     thumbnailFile: "tacs-thumbnail.PNG",
@@ -271,7 +283,7 @@ const wimmaProjects = [
   }),
   new Project({
     title: "WIMMA Lab: Haastix",
-    description: "Social game platform, where players are competing who can complete given challenges the fastest. The challenges are completed by taking pictures and sending them to evaluation. The gamemaster will then accept or reject the submission.",
+    description: ["Social game platform, where players are competing who can complete given challenges the fastest. The challenges are completed by taking pictures and sending them to evaluation. The gamemaster will then accept or reject the submission."],
     badges: [{ title: "React" }, { title: "Node.js" }, { title: "Website", type: "secondary" }, { title: "🗃️ Archived", type: "archived" }],
     gitUri: "https://gitlab.labranet.jamk.fi/wimma-lab-2022/iotitude",
     type: "secondary"
@@ -281,7 +293,7 @@ const wimmaProjects = [
 const otherProjects = [
   new Project({
     title: "Misc. Programming Exercises",
-    description: "Miscellaneous CSS, design pattern and data structure exercises.",
+    description: ["Miscellaneous CSS, design pattern and data structure exercises."],
     badges: [{ title: "CSS" }, { title: "C#" }, { title: "Design Patterns", type: "secondary" }, { title: "Data Structures", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/Exercises",
     links: [{ url: "https://aamojl.github.io/Exercises/CSS/index.html", text: "Check the CSS exercises page" }],
@@ -291,7 +303,7 @@ const otherProjects = [
 
 // new Project({
 //   title: "",
-//   description: "",
+//   description: [""],
 //   badges: [{ title: "" }, { title: "" }, { title: "", type: "secondary" }, { title: "", type: "secondary" }],
 //   gitUri: "",
 //   thumbnailFile: "",

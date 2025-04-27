@@ -254,6 +254,14 @@ p {
       .card-body {
         display: flex;
         flex-direction: column;
+
+        .description {
+          margin: .5em 0 0 0;
+
+          p {
+            margin: .5em 0;
+          }
+        }
       }
 
       .card-thumbnail {
