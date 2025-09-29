@@ -17,7 +17,7 @@ class ProjectCard extends HTMLElement {
 
     switch (this.props.type) {
       case "secondary": content.querySelector("[name='root']")?.classList.add("border"); break;
-      default: content.querySelector("[name='root']")?.classList.add("shadow"); break;
+      default: content.querySelector("[name='root']")?.classList.add("border"); break;
     }
 
     content.querySelector("[name='project-title']").innerText = this.props.title;
@@ -123,7 +123,6 @@ class ProjectCard extends HTMLElement {
     document.getElementById("popup-background")?.addEventListener("click", () => {
       this.closeImagePopup(popup);
     }, { once: true });
-
   }
 
   /**
@@ -191,7 +190,6 @@ function appendProjects(projectLists) {
     const list = projectLists[i];
 
     list.forEach(project => {
-      //asd(project);
       projectsContainer?.append(new ProjectCard(project));
     });
 
@@ -250,6 +248,13 @@ const primaryProjects = [
     badges: [{ title: "Kotlin" }, { title: "Jetpack Compose" }, { title: "Android", type: "secondary" }, { title: "MVVM", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/Android-Cookbook",
     thumbnailFile: "android-cookbook-thumbnail.png",
+  }),
+  new Project({
+    title: "Android Exercise Tracker",
+    description: ["Fitness application to track workout routines and performance progress. Can be used to create weekly workout schedule and improvement charts."],
+    badges: [{ title: "Kotlin" }, { title: "Jetpack Compose" }, { title: "Android", type: "secondary" }, { title: "MVVM", type: "secondary" }],
+    gitUri: "https://github.com/aamoJL/exercise-tracker",
+    thumbnailFile: "exercise-tracker-thumbnail.jpg",
   }),
   new Project({
     title: "VOD-Player",
