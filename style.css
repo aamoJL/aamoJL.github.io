@@ -11,6 +11,13 @@
 
   --border-color: #e0e0e0;
 
+  --shadow-s: inset 0 1px 2px #ffffff30,
+    0 1px 2px #00000030,
+    0 2px 4px #00000015;
+  --shadow-m: inset 0 1px 2px #ffffff50,
+    0 2px 4px #00000030,
+    0 4px 8px #00000015;
+
   --paper-texture-uri: url(assets/paper-texture.png);
   --noise-texture-uri: url(assets/noisy-texture-100x100-o6-d10-c-FBFAF8-t1.png);
 
@@ -289,7 +296,11 @@ p {
   background-color: var(--background-color);
 
   &.shadow {
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    box-shadow: var(--shadow-m)
+  }
+
+  &.shadow-s {
+    box-shadow: var(--shadow-s)
   }
 
   &.border {

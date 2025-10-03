@@ -17,7 +17,7 @@ class ProjectCard extends HTMLElement {
 
     switch (this.props.type) {
       case "secondary": content.querySelector("[name='root']")?.classList.add("border"); break;
-      default: content.querySelector("[name='root']")?.classList.add("border"); break;
+      default: content.querySelector("[name='root']")?.classList.add("shadow-s"); break;
     }
 
     content.querySelector("[name='project-title']").innerText = this.props.title;
@@ -267,7 +267,7 @@ const primaryProjects = [
     title: "Unity Motion Capture",
     description: [
       "Motion capture using virtual reality devices for Unity engine.",
-      "The project was for my school thesis."
+      "The project was for my bachelor’s thesis."
     ],
     badges: [{ title: "Unity" }, { title: "C#" }, { title: "Motion Capture", type: "secondary" }, { title: "Virtual Reality", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/Unity-Mocap",
@@ -306,12 +306,14 @@ const otherProjects = [
   }),
 ]
 
-// new Project({
-//   title: "",
-//   description: [""],
-//   badges: [{ title: "" }, { title: "" }, { title: "", type: "secondary" }, { title: "", type: "secondary" }],
-//   gitUri: "",
-//   thumbnailFile: "",
-//   links: [{url: "", text: ""}],
-//   type: ""
-// })
+/**
+new Project({
+  title: "",
+  description: [""],
+  badges: [{ title: "" }, { title: "" }, { title: "", type: "secondary" }, { title: "", type: "secondary" }],
+  gitUri: "",
+  thumbnailFile: "",
+  links: [{url: "", text: ""}],
+  type: ""
+})
+*/
