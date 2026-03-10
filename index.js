@@ -247,7 +247,7 @@ const primaryProjects = [
     description: ["Cookbook application for Android phones."],
     badges: [{ title: "Kotlin" }, { title: "Jetpack Compose" }, { title: "Android", type: "secondary" }, { title: "MVVM", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/Android-Cookbook",
-    thumbnailFile: "android-cookbook-thumbnail.png",
+    thumbnailFile: "android-cookbook-thumbnail.jpg",
   }),
   new Project({
     title: "Android Exercise Tracker",
