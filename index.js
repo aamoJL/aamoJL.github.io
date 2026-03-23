@@ -229,7 +229,7 @@ const primaryProjects = [
     ],
     badges: [{ title: ".Net" }, { title: "C#" }, { title: "Desktop", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/MTG-Application",
-    thumbnailFile: "mtg-application-thumbnail.png"
+    thumbnailFile: "mtg-application-thumbnail.webp"
   }),
   new Project({
     title: "LM2 Notepad & Mapping Tool",
@@ -239,7 +239,7 @@ const primaryProjects = [
     ],
     badges: [{ title: "Javascript" }, { title: "Node.js" }, { title: "Desktop", type: "secondary" }, { title: "Electron", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/LM2Notepad",
-    thumbnailFile: "la-mulana-map-tool-thumbnail.png",
+    thumbnailFile: "la-mulana-map-tool-thumbnail.webp",
     links: [{ url: "https://aamojl.github.io/LM2Notepad/demo/map.html", text: "Try the web demo" }]
   }),
   new Project({
@@ -247,21 +247,21 @@ const primaryProjects = [
     description: ["Cookbook application for Android phones."],
     badges: [{ title: "Kotlin" }, { title: "Jetpack Compose" }, { title: "Android", type: "secondary" }, { title: "MVVM", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/Android-Cookbook",
-    thumbnailFile: "android-cookbook-thumbnail.jpg",
+    thumbnailFile: "android-cookbook-thumbnail.webp",
   }),
   new Project({
     title: "Android Exercise Tracker",
     description: ["Fitness application to track workout routines and performance progress. Can be used to create weekly workout schedule and improvement charts."],
     badges: [{ title: "Kotlin" }, { title: "Jetpack Compose" }, { title: "Android", type: "secondary" }, { title: "MVVM", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/exercise-tracker",
-    thumbnailFile: "exercise-tracker-thumbnail.jpg",
+    thumbnailFile: "exercise-tracker-thumbnail.webp",
   }),
   new Project({
     title: "VOD-Player",
     description: ["Offline livestream video player with chat."],
     badges: [{ title: ".Net" }, { title: "C#" }, { title: "Desktop", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/VOD-Player",
-    thumbnailFile: "vod-player-thumbnail.png",
+    thumbnailFile: "vod-player-thumbnail.webp",
   }),
   new Project({
     title: "Unity Motion Capture",
@@ -271,7 +271,7 @@ const primaryProjects = [
     ],
     badges: [{ title: "Unity" }, { title: "C#" }, { title: "Motion Capture", type: "secondary" }, { title: "Virtual Reality", type: "secondary" }],
     gitUri: "https://github.com/aamoJL/Unity-Mocap",
-    thumbnailFile: "mocap-thumbnail.png",
+    thumbnailFile: "mocap-thumbnail.webp",
     links: [{ url: "https://github.com/user-attachments/assets/e8a6d130-1aa0-4e17-95c8-a0201a840bdf", text: "Watch the demonstration video" }],
   })
 ]
@@ -282,7 +282,7 @@ const wimmaProjects = [
     description: ["Realtime situational awareness system prototype for EHASA ry's airsoft games that can be used to track player positions and give them information, missions and orders by text or drawing shapes on the app's map."],
     badges: [{ title: "React" }, { title: "Node.js" }, { title: "Website", type: "secondary" }, { title: "🗃️ Archived", type: "archived" }],
     gitUri: "https://gitlab.labranet.jamk.fi/wimma-lab-2019/overflow",
-    thumbnailFile: "tacs-thumbnail.PNG",
+    thumbnailFile: "tacs-thumbnail.webp",
     links: [{ url: "https://www.youtube.com/watch?v=PUbhPWmNI3k", text: "Watch the product video" }],
     type: "secondary"
   }),
